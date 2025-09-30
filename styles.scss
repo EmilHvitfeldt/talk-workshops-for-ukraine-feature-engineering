@@ -354,3 +354,8 @@ $presentation-font-size-root: 40px;
   margin: auto !important;
   padding: 25px;
 }
+
+.reveal img {
+  max-width: unset;
+  max-height: unset;
+}
