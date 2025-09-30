@@ -1,6 +1,5 @@
 /*-- scss:defaults --*/
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
 
@@ -37,7 +36,7 @@ $link-color: theme-color("pink");
 $selection-bg: lighten($theme-pink, 10%);
 $selection-color: darken($theme-pink, 20%);
 
-$presentation-heading-font: "Fira Sans Extra Condensed", sans-serif;
+$presentation-heading-font: "Source Code Pro", sans-serif;
 $font-family-sans-serif: "Happy Monkey", sans-serif;
 
 $presentation-font-size-root: 40px;
