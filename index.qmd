@@ -15,7 +15,7 @@ knitr:
     dev.args: { bg: "transparent" }
 ---
 
-## Feature Engineering {.theme-title .center}
+## Feature Engineering {.center .dark}
 
 ### Workshops for Ukraine 
 
@@ -32,7 +32,7 @@ to allow for easy
 :::
 :::
 
-##
+## {.dark}
 
 ::: {.speech .pink}
 why do we use feature engineering?
@@ -50,7 +50,7 @@ and we often have non-numeric data
 :::
 :::
 
-##
+## {.dark}
 
 ::: {.speech .pink}
 Are there other reason?
@@ -74,7 +74,7 @@ or deal with scaling issues
 :::
 :::
 
-# {.theme-section2}
+# {.dark}
 
 ::: {.r-fit-text style="transform: translateY(-15rem);"}
 preprocessing vs feature engineering 
@@ -622,9 +622,9 @@ adoptions |>
 :::
 :::
 
-# numeric variables {.theme-section3}
+# numeric variables {.dark}
 
-##
+## {.dark}
 
 ::: {.speech .pink}
 Aren't we done? we have numeric variables
@@ -1026,9 +1026,9 @@ Splines: `step_spline_b()`
 
 {{< countdown "3:00">}}
 
-# Categorical Variables {.theme-section4}
+# Categorical Variables {.dark}
 
-##
+## {.dark}
 
 ::: {.speech .pink}
 Dealing with categorical variables are easy right?
@@ -1465,10 +1465,6 @@ We can re-engineer it as:
 - Year
 - Indicators for holidays
 
-::: {.absolute bottom=0 right=0}
-[FEAZ](https://feaz-book.com/datetime-extraction)
-:::
-
 ## `intake_date` date features
 
 using `step_date( features = c("year", "month", "dow", "decimal", "mday", "doy", "week", "semester", "quarter"))`
@@ -1573,7 +1569,8 @@ recipe(~intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## holidays as numerics
@@ -1590,7 +1587,8 @@ recipe(~ intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## What are the issues with these features?
@@ -1633,10 +1631,6 @@ recipe(~intake_date, data = longbeach) |>
   step_time_event(intake_date, rules = rules)
 ```
 
-::: {.absolute bottom=0 right=0}
-[FEAZ](https://feaz-book.com/datetime-advanced)
-:::
-
 ## `step_time_event()` as numerics
 
 ```{r}
@@ -1653,7 +1647,8 @@ recipe(~intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## Non-indicator time events
@@ -1687,7 +1682,8 @@ recipe(~intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## `step_date_before()` - inverse
@@ -1707,7 +1703,8 @@ recipe(~intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## `step_date_after()` - inverse
@@ -1727,7 +1724,8 @@ recipe(~intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## `step_date_nearest()` - inverse
@@ -1747,7 +1745,8 @@ recipe(~intake_date, data = longbeach) |>
   pivot_longer(-intake_date) |>
   ggplot(aes(intake_date, value)) +
   geom_col() +
-  facet_grid(name ~ ., scales = "free_y")
+  facet_grid(name ~ ., scales = "free_y") +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22)
 ```
 
 ## Datetime features
@@ -1781,7 +1780,7 @@ nearby: `extrasteps::step_date_before/after/nearest()`
 
 {{< countdown "3:00">}}
 
-# Want to learn more? {.theme-section5}
+# Want to learn more? {.dark}
 
 My WIP Book: Feature Engineering A-Z
 
