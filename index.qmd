@@ -387,7 +387,7 @@ all have `*_predictors()` variants
 :::
 :::
 
-## Long Beach Animal Shelter Data
+## Long Beach Animal Shelter Data {.dark}
 
 ![](assets/cat-theme/head-02.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-03.svg){.absolute top=-50 right=150 width="150" height="150"}
@@ -421,7 +421,7 @@ Explore the `animalshelter::longbeach` data set, using whatever tools you prefer
 <https://github.com/emilhvitfeldt/animalshelter>
 :::
 
-## Date Time
+## Date Time {.dark}
 
 ![](assets/cat-theme/head-06.svg){.absolute top=0 right=0 width="150" height="150"}
 
@@ -507,7 +507,7 @@ recipe(~ intake_date, data = adoptions) |>
 :::::
 :::::
 
-## Multiple Categorical variables
+## Multiple Categorical variables {.dark}
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
@@ -521,7 +521,7 @@ adoptions |>
   gt()
 ```
 
-## Multiple Categorical variables
+## Multiple Categorical variables {.dark}
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
@@ -541,7 +541,7 @@ adoptions |>
   gt()
 ```
 
-## Multiple Categorical variables
+## Multiple Categorical variables {.dark}
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
@@ -562,7 +562,7 @@ adoptions |>
   gt()
 ```
 
-## Multiple Categorical variables
+## Multiple Categorical variables {.dark}
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
@@ -1079,7 +1079,7 @@ A logical variables is conceptually a factor
 :::
 :::
 
-## Factor Examples - sex
+## Factor Examples - sex {.dark}
 
 ::: columns
 ::: {.column width="50%"}
@@ -1101,7 +1101,7 @@ We could have it split into `sex` and `spayed/neutered`
 :::
 :::
 
-## Factor Examples - intake_condition
+## Factor Examples - intake_condition {.dark}
 
 ::: columns
 ::: {.column width="50%"}
@@ -1123,7 +1123,7 @@ adoptions |>
 :::
 :::
 
-## Character Examples - promary color
+## Character Examples - promary color {.dark}
 
 ::: columns
 ::: {.column width="33%"}
@@ -1154,7 +1154,7 @@ adoptions |>
 :::
 :::
 
-## Character Examples - animal name
+## Character Examples - animal name {.dark}
 
 ```{r}
 pet_names <- adoptions |>
@@ -1192,7 +1192,7 @@ pet_names |>
 :::
 :::
 
-## Character Examples - animal name
+## Character Examples - animal name {.dark}
 
 ```{r}
 long_pet_names <- pet_names |>
@@ -1286,7 +1286,7 @@ This is unlikely to work well unless done with care
 <https://feaz-book.com/categorical-label>
 :::
 
-## Label / Ordinal Encoding - Example
+## Label / Ordinal Encoding - Example {.dark}
 
 ```{r}
 adoptions |>
@@ -1347,7 +1347,7 @@ Dummy Encoding returns k-1 variables
 
 Dummy encoding is preferred to avoid redundant data
 
-## Dummy Encoding - Example
+## Dummy Encoding - Example {.dark}
 
 ```{r}
 adoptions |>
@@ -1377,7 +1377,7 @@ Can be raw count or percentage (doens't matter much)
 <https://feaz-book.com/categorical-frequency>
 :::
 
-## Frequency Encoding - Example
+## Frequency Encoding - Example {.dark}
 
 ```{r}
 adoptions |>
@@ -1407,7 +1407,7 @@ The target variable will typically be the outcome, but that is not necessarily a
 <https://feaz-book.com/categorical-target>
 :::
 
-## Target Encoding - Example
+## Target Encoding - Example {.dark}
 
 ```{r}
 adoptions |>

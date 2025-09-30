@@ -38,6 +38,7 @@ $selection-color: darken($theme-pink, 20%);
 
 $presentation-heading-font: "Source Code Pro", sans-serif;
 $font-family-sans-serif: "Happy Monkey", sans-serif;
+$fonf-family-monospace: "Source Code Pro", sans-serif;
 
 $presentation-font-size-root: 40px;
 
@@ -103,10 +104,27 @@ $presentation-font-size-root: 40px;
 .gt_table_body {
   white-space: nowrap;
   font-size: 24px;
+  background-color: $theme-yellow-light;
+  font-family: $fonf-family-monospace;
 }
 
 .gt_col_heading {
   font-size: 28px !important;
+  font-weight: bold !important;
+  background-color: darken($theme-yellow-light, 2%) !important;
+  border-bottom: solid $theme-yellow-dark !important;
+  font-family: $fonf-family-monospace !important;
+}
+
+.gt_row {
+  border-top-color: $theme-yellow-dark !important;
+}
+
+.gt_table {
+  border-top-color: $theme-yellow-dark !important;
+  border-top-width: 3px !important;
+  border-bottom-color: $theme-yellow-dark !important;
+  border-bottom-width: 3px !important;
 }
 
 .pink-text {
