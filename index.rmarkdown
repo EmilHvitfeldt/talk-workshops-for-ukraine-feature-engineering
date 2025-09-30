@@ -15,6 +15,8 @@ knitr:
     dev.args: { bg: "transparent" }
 ---
 
+
+
 ## Feature Engineering {.theme-title .center}
 
 ### Workshops for Ukraine 
@@ -393,6 +395,8 @@ all have `*_predictors()` variants
 ![](assets/cat-theme/head-03.svg){.absolute top=-50 right=150 width="150" height="150"}
 ![](assets/cat-theme/head-04.svg){.absolute top=-50 right=0 width="150" height="150"}
 
+
+
 ```{r}
 library(tidyverse)
 library(janitor)
@@ -406,6 +410,8 @@ adoptions |>
   head(n = 10) |>
   gt()
 ```
+
+
 
 ::: footer
 <https://data.longbeach.gov/explore/dataset/animal-shelter-intakes-and-outcomes>
@@ -430,18 +436,24 @@ How can we deal with this variable?
 ::::: {.columns}
 
 ::::: {.column width="20%"}
+
+
 ```{r}
 adoptions |>
   select(intake_date) |>
   head(n = 10) |>
   gt()
 ```
+
+
 :::::
 
 ::::: {.column width="80%"}
 ::: r-stack
 
 ::: {.fragment .fade-in-then-out}
+
+
 ```{r}
 adoptions |>
   select(intake_date) |>
@@ -449,12 +461,16 @@ adoptions |>
   head(n = 10) |>
   gt()
 ```
+
+
 :::
 
 ::: {.fragment .fade-in-then-out}
 :::
 
 ::: {.fragment .fade-in-then-out}
+
+
 ```{r}
 adoptions |>
   select(intake_date) |>
@@ -466,12 +482,16 @@ adoptions |>
   head(n = 10) |>
   gt()
 ```
+
+
 :::
 
 ::: {.fragment .fade-in-then-out}
 :::
 
 ::: {.fragment .fade-in-then-out}
+
+
 ```{r}
 library(extrasteps)
 library(almanac)
@@ -485,9 +505,13 @@ recipe(~ intake_date, data = adoptions) |>
   head(n = 10) |>
   gt()
 ```
+
+
 :::
 
 ::: {.fragment .fade-in-then-out}
+
+
 ```{r}
 library(extrasteps)
 library(almanac)
@@ -501,6 +525,8 @@ recipe(~ intake_date, data = adoptions) |>
   head(n = 10) |>
   gt()
 ```
+
+
 :::
 
 :::
@@ -514,6 +540,8 @@ recipe(~ intake_date, data = adoptions) |>
 
 How can we deal with these variables?
 
+
+
 ```{r}
 adoptions |>
   select(primary_color, secondary_color) |>
@@ -521,12 +549,16 @@ adoptions |>
   gt()
 ```
 
+
+
 ## Multiple Categorical variables
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
 
 How can we deal with these variables? Create dummies
+
+
 
 ```{r}
 adoptions |>
@@ -541,12 +573,16 @@ adoptions |>
   gt()
 ```
 
+
+
 ## Multiple Categorical variables
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
 
 How can we deal with these variables? othering of low counts
+
+
 
 ```{r}
 adoptions |>
@@ -562,12 +598,16 @@ adoptions |>
   gt()
 ```
 
+
+
 ## Multiple Categorical variables
 
 ![](assets/cat-theme/head-07.svg){.absolute top=-50 right=300 width="150" height="150"}
 ![](assets/cat-theme/head-08.svg){.absolute top=-50 right=150 width="150" height="150"}
 
 How can we deal with these variables? combined dummies
+
+
 
 ```{r}
 adoptions |>
@@ -582,6 +622,8 @@ adoptions |>
   head(n = 10) |>
   gt()
 ```
+
+
 
 ::: footer
 <https://feaz-book.com/categorical-multi-dummy>
@@ -661,6 +703,8 @@ We **rarely** care whether a predictor is normal
 
 ## A skewed distribution
 
+
+
 ```{r}
 library(modeldata)
 
@@ -672,7 +716,11 @@ ames |>
 
 ```
 
+
+
 ## A logged skewed distribution
+
+
 
 ```{r}
 library(modeldata)
@@ -684,7 +732,11 @@ ames |>
   labs(x = NULL, y = NULL)
 ```
 
+
+
 ## A square rooted skewed distribution
+
+
 
 ```{r}
 library(modeldata)
@@ -695,6 +747,8 @@ ames |>
   theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL)
 ```
+
+
 
 ## Methods to alter distributions
 
@@ -747,6 +801,8 @@ will make interpretations slightly harder
 
 ## Motivated example
 
+
+
 ```{r}
 set.seed(1234)
 two_groups <- bind_rows(
@@ -765,7 +821,11 @@ two_groups |>
   ylim(c(-5, 15))
 ```
 
+
+
 ## Motivated example
+
+
 
 ```{r}
 two_groups |>
@@ -780,7 +840,11 @@ two_groups |>
   ylim(c(-5, 15))
 ```
 
+
+
 ## Motivated example
+
+
 
 ```{r}
 grid <- expand_grid(y = seq(-5, 15, length.out = 200), x = seq(-35, 135, length.out = 200)) |>
@@ -802,7 +866,11 @@ two_groups |>
   ylim(c(-5, 15))
 ```
 
+
+
 ## Motivated example
+
+
 
 ```{r}
 two_groups |>
@@ -815,6 +883,8 @@ two_groups |>
   geom_point(data = tibble(group = "C", x = 45, y = 12)) +
   coord_fixed()
 ```
+
+
 
 ## Scaling Methods
 
@@ -898,6 +968,8 @@ non-linear effects don't have this property
 
 ## Non-linear example
 
+
+
 ```{r}
 set.seed(1234)
 data_toy <- tibble::tibble(
@@ -914,7 +986,11 @@ data_toy |>
   theme(axis.text = element_blank())
 ```
 
+
+
 ## Non-linear example - distance to maximum
+
+
 
 ```{r}
 data_toy |>
@@ -931,7 +1007,11 @@ data_toy |>
   
 ```
 
+
+
 ## Non-linear example - splines
+
+
 
 ```{r}
 rec_splines <- recipe(Outcome ~ Predictor, data = data_toy) |>
@@ -957,11 +1037,15 @@ data_splines |>
   theme(axis.text = element_blank())
 ```
 
+
+
 ::: footer
 <https://feaz-book.com/numeric-splines>
 :::
 
 ## Basis Spline Features
+
+
 
 ```{r}
 data_splines |>
@@ -974,11 +1058,15 @@ data_splines |>
   theme(axis.text = element_blank())
 ```
 
+
+
 ::: footer
 <https://feaz-book.com/numeric-splines>
 :::
 
 ## Monotone Spline Features
+
+
 
 ```{r}
 rec_splines <- recipe(Outcome ~ Predictor, data = data_toy) |>
@@ -999,6 +1087,8 @@ data_splines |>
   theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   theme(axis.text = element_blank())
 ```
+
+
 
 ::: footer
 <https://feaz-book.com/numeric-splines>
@@ -1083,11 +1173,15 @@ A logical variables is conceptually a factor
 
 ::: columns
 ::: {.column width="50%"}
+
+
 ```{r}
 adoptions |>
   count(sex) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="50%"}
@@ -1105,21 +1199,29 @@ We could have it split into `sex` and `spayed/neutered`
 
 ::: columns
 ::: {.column width="50%"}
+
+
 ```{r}
 adoptions |>
   count(intake_condition) |>
   slice(1:8) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="50%"}
+
+
 ```{r}
 adoptions |>
   count(intake_condition) |>
   slice(9:16) |>
   gt()
 ```
+
+
 :::
 :::
 
@@ -1127,34 +1229,48 @@ adoptions |>
 
 ::: columns
 ::: {.column width="33%"}
+
+
 ```{r}
 adoptions |>
   count(primary_color) |>
   slice(1:20) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="33%"}
+
+
 ```{r}
 adoptions |>
   count(primary_color) |>
   slice(21:40) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="33%"}
+
+
 ```{r}
 adoptions |>
   count(primary_color) |>
   slice(41:60) |>
   gt()
 ```
+
+
 :::
 :::
 
 ## Character Examples - animal name
+
+
 
 ```{r}
 pet_names <- adoptions |>
@@ -1166,33 +1282,49 @@ pet_names <- adoptions |>
   count(animal_name, sort = TRUE)
 ```
 
+
+
 ::: columns
 ::: {.column width="33%"}
+
+
 ```{r}
 pet_names |>
   slice(1:20) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="33%"}
+
+
 ```{r}
 pet_names |>
   slice(21:40) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="33%"}
+
+
 ```{r}
 pet_names |>
   slice(41:60) |>
   gt()
 ```
+
+
 :::
 :::
 
 ## Character Examples - animal name
+
+
 
 ```{r}
 long_pet_names <- pet_names |>
@@ -1201,21 +1333,31 @@ long_pet_names <- pet_names |>
   arrange(desc(nchar(animal_name)))
 ```
 
+
+
 ::: columns
 ::: {.column width="50%"}
+
+
 ```{r}
 long_pet_names |>
   slice(1:10) |>
   gt()
 ```
+
+
 :::
 
 ::: {.column width="50%"}
+
+
 ```{r}
 long_pet_names |>
   slice(11:20) |>
   gt()
 ```
+
+
 :::
 :::
 
@@ -1288,6 +1430,8 @@ This is unlikely to work well unless done with care
 
 ## Label / Ordinal Encoding - Example
 
+
+
 ```{r}
 adoptions |>
   select(sex_before = sex, intake_type_before = intake_type) |>
@@ -1299,6 +1443,8 @@ adoptions |>
   slice(1:12) |>
   gt()
 ```
+
+
 
 ## Dummy Encoding
 
@@ -1349,6 +1495,8 @@ Dummy encoding is preferred to avoid redundant data
 
 ## Dummy Encoding - Example
 
+
+
 ```{r}
 adoptions |>
   select(sex, intake_type) |>
@@ -1360,6 +1508,8 @@ adoptions |>
   slice(1:12) |>
   gt()
 ```
+
+
 
 ## Frequency Encoding
 
@@ -1379,6 +1529,8 @@ Can be raw count or percentage (doens't matter much)
 
 ## Frequency Encoding - Example
 
+
+
 ```{r}
 adoptions |>
   select(sex_before = sex, intake_type_before = intake_type) |>
@@ -1390,6 +1542,8 @@ adoptions |>
   slice(1:12) |>
   gt()
 ```
+
+
 
 ## Target Encoding
 
@@ -1409,6 +1563,8 @@ The target variable will typically be the outcome, but that is not necessarily a
 
 ## Target Encoding - Example
 
+
+
 ```{r}
 adoptions |>
   select(sex_before = sex, intake_type_before = intake_type, outcome_type) |>
@@ -1421,6 +1577,8 @@ adoptions |>
   slice(1:12) |>
   gt()
 ```
+
+
 
 ## Your turn: Work on categorical sections
 
@@ -1473,6 +1631,8 @@ We can re-engineer it as:
 
 using `step_date( features = c("year", "month", "dow", "decimal", "mday", "doy", "week", "semester", "quarter"))`
 
+
+
 ```{r}
 #| label: step-date
 #| echo: false
@@ -1500,6 +1660,8 @@ recipe(~intake_date, data = longbeach) |>
   knitr::kable()
 ```
 
+
+
 ::: footer
 <https://feaz-book.com/datetime-extraction>
 :::
@@ -1507,6 +1669,8 @@ recipe(~intake_date, data = longbeach) |>
 ## `intake_date` date features
 
 Adding `label = FALSE`
+
+
 
 ```{r}
 #| label: step-date-label-false-table
@@ -1534,6 +1698,8 @@ recipe(~intake_date, data = longbeach) |>
   knitr::kable()
 ```
 
+
+
 ## Other recipes steps
 
 - [`step_time()`](https://recipes.tidymodels.org/reference/step_date.html)
@@ -1545,6 +1711,8 @@ Works the same as `step_date()` but for measurements smaller than day: hour, hou
 Adds indicators for holidays. See `timeDate::listHolidays()` for supported holidays.
 
 ## dates as numerics
+
+
 
 ```{r}
 #| label: step-date-label-false
@@ -1576,7 +1744,11 @@ recipe(~intake_date, data = longbeach) |>
   facet_grid(name ~ ., scales = "free_y")
 ```
 
+
+
 ## holidays as numerics
+
+
 
 ```{r}
 #| label: step-holiday
@@ -1593,6 +1765,8 @@ recipe(~ intake_date, data = longbeach) |>
   facet_grid(name ~ ., scales = "free_y")
 ```
 
+
+
 ## What are the issues with these features?
 
 The numeric features make it easy to capture the end or beginning, but harder to do anything more granular.
@@ -1602,6 +1776,8 @@ The indicators mostly care about the day itself. No information about the lead-u
 ## time events
 
 Using `extrasteps::step_time_event()` and the [almanac](https://davisvaughan.github.io/almanac/index.html) package, we can create useful time features.
+
+
 
 ```{r}
 #| label: almanac
@@ -1620,9 +1796,13 @@ rule_3 <- yearly("1997-06-05") |>
   recur_on_month_of_year(c("Jun", "July", "Aug"))
 ```
 
+
+
 ## `step_time_event()`
 
 Create a list of rules (last slide) and pass them to the `rules` argument of [`extrasteps::step_time_event()`](https://emilhvitfeldt.github.io/extrasteps/reference/step_time_event.html)
+
+
 
 ```{r}
 #| label: step-time-event
@@ -1633,11 +1813,15 @@ recipe(~intake_date, data = longbeach) |>
   step_time_event(intake_date, rules = rules)
 ```
 
+
+
 ::: {.absolute bottom=0 right=0}
 [FEAZ](https://feaz-book.com/datetime-advanced)
 :::
 
 ## `step_time_event()` as numerics
+
+
 
 ```{r}
 #| label: step-time-event-figure
@@ -1656,6 +1840,8 @@ recipe(~intake_date, data = longbeach) |>
   facet_grid(name ~ ., scales = "free_y")
 ```
 
+
+
 ## Non-indicator time events
 
 These features still have the issue that they only attach value to the date itself.
@@ -1671,6 +1857,8 @@ We can attach values based on how far we are away from those dates.
 :::
 
 ## `step_date_before()`
+
+
 
 ```{r}
 #| label: step-date-before
@@ -1690,7 +1878,11 @@ recipe(~intake_date, data = longbeach) |>
   facet_grid(name ~ ., scales = "free_y")
 ```
 
+
+
 ## `step_date_before()` - inverse
+
+
 
 ```{r}
 #| label: step-date-before-inverse
@@ -1710,7 +1902,11 @@ recipe(~intake_date, data = longbeach) |>
   facet_grid(name ~ ., scales = "free_y")
 ```
 
+
+
 ## `step_date_after()` - inverse
+
+
 
 ```{r}
 #| label: step-date-after-inverse
@@ -1730,7 +1926,11 @@ recipe(~intake_date, data = longbeach) |>
   facet_grid(name ~ ., scales = "free_y")
 ```
 
+
+
 ## `step_date_nearest()` - inverse
+
+
 
 ```{r}
 #| label: step-date-nearest-inverse
@@ -1749,6 +1949,8 @@ recipe(~intake_date, data = longbeach) |>
   geom_col() +
   facet_grid(name ~ ., scales = "free_y")
 ```
+
+
 
 ## Datetime features
 
@@ -1792,3 +1994,4 @@ Finished books by other people:
 - Python Feature Engineering Cookbook
 - Feature Engineering Bookcamp
 - Feature Engineering and Selection
+
