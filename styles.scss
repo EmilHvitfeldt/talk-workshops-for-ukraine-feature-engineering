@@ -15,6 +15,22 @@ $theme-white: #ffffff;
 $theme-grey: #999999;
 $theme-grey-lite: #e0e0e0;
 
+$colors: (
+  "yellow": #ffba31,
+  "orange": #ff6d03,
+  "red": #ff638f,
+  "green": #3faf72,
+  "citron": #87ad25,
+  "pink": #f26cae,
+  "blue": #2ca5da,
+  "purple": #cc79df,
+  "lemon": #f9f991,
+);
+
+@function theme-color($color) {
+  @return map-get($colors, $color);
+}
+
 $link-color: darken($theme-pink, 10%);
 
 $selection-bg: lighten($theme-pink, 10%);
@@ -26,6 +42,12 @@ $font-family-sans-serif: "Roboto", sans-serif;
 $presentation-font-size-root: 40px;
 
 /*-- scss:rules --*/
+
+@each $name, $color in $colors {
+  .#{$name} {
+    color: $color;
+  }
+}
 
 .slide-background-content {
   background-color: $theme-yellow-light;
@@ -304,6 +326,7 @@ $presentation-font-size-root: 40px;
 }
 
 .mono {
+  background-color: $theme-yellow-light;
   font-family: "Source Code Pro", monospace;
   font-size: 0.8em;
   border: none;

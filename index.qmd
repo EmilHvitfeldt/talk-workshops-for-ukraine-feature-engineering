@@ -144,7 +144,7 @@ extensible framework for pipeable sequences of feature engineering steps provide
 - Can do things formulas can't
 :::
 
-## What is a recipe?
+## What is a recipe? {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -156,10 +156,10 @@ recipe(sale_price ~ ., data = ames_training) |>
 \ \ step_normalize(all_numeric_predictors())
 :::
 
-## What is a recipe?
+## What is a recipe? {.dark}
 
 :::{.mono}
-[recipe(sale_price ~ ., data = ames_training)]{.yellow} |>  
+[recipe(sale_price ~ ., data = ames_training)]{.purple} |>  
 \ \ step_unknown(all_nominal_predictors()) |>  
 \ \ step_other(all_nominal_predictors()) |>  
 \ \ step_dummy(all_nominal_predictors()) |>  
@@ -168,9 +168,9 @@ recipe(sale_price ~ ., data = ames_training) |>
 \ \ step_normalize(all_numeric_predictors())
 :::
 
-[Start by calling `recipe()` to denote the data source and variables used]{.yellow}
+[Start by calling `recipe()` to denote the data source and variables used]{.purple}
 
-## What is a recipe?
+## What is a recipe? {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -184,7 +184,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [specifying what actions to take by adding `step_*()`s]{.orange}
 
-## What is a recipe?
+## What is a recipe? {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -198,7 +198,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [using {tidyselect} and recipes specific selectors to denote affected variables]{.red}
 
-## What is a recipe?
+## What is a recipe? {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -212,7 +212,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [many steps have options to modify behavior]{.green}
 
-## Using a recipe
+## Using a recipe {.dark}
 
 [recipes are can be used with {workflows} to "combine" it with a model]{.citron}
 
@@ -238,7 +238,7 @@ calculations uses the *training* set. For example:
 Once a a recipe is added to a workflow,  
 this occurs when `fit()` is called.
 
-## types of steps - trained
+## types of steps - trained {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -252,7 +252,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [Levels not found in tranining data set are set to "unseen"]{.blue}
 
-## types of steps - trained
+## types of steps - trained {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -266,7 +266,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [records which levels are seen in training data set]{.blue}
 
-## types of steps - trained
+## types of steps - trained {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -280,7 +280,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [records which variables had zero variance]{.blue}
 
-## types of steps - trained
+## types of steps - trained {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -294,7 +294,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [records mean and sd of variables]{.blue}
 
-## types of steps - static
+## types of steps - static {.dark}
 
 :::{.mono}
 recipe(sale_price ~ ., data = ames_training) |>  
@@ -308,7 +308,7 @@ recipe(sale_price ~ ., data = ames_training) |>
 
 [these steps provide static transformations, and could thus be done outside before the recipe]{.pink}
 
-## Extensive role selection
+## Extensive role selection {.dark}
 
 All steps use {tidyselect} to select variables
 
@@ -323,7 +323,7 @@ step_pca([BsmtFin_SF_1]{.orange}, [BsmtFin_SF_2]{.orange}, [Bsmt_Unf_SF]{.orange
 
 variables can be written out one by one
 
-## Extensive role selection
+## Extensive role selection {.dark}
 
 All steps use {tidyselect} to select variables
 
