@@ -655,8 +655,9 @@ library(modeldata)
 ames |>
   ggplot(aes(Lot_Area)) +
   geom_histogram(fill = "#ECC0CF", color = prismatic::clr_darken("#ECC0CF", 0.1), bins = 100) +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL)
+
 ```
 
 ## A logged skewed distribution
@@ -667,7 +668,7 @@ library(modeldata)
 ames |>
   ggplot(aes(log(Lot_Area))) +
   geom_histogram(fill = "#ECC0CF", color = prismatic::clr_darken("#ECC0CF", 0.1), bins = 100) +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL)
 ```
 
@@ -679,7 +680,7 @@ library(modeldata)
 ames |>
   ggplot(aes(sqrt(Lot_Area))) +
   geom_histogram(fill = "#ECC0CF", color = prismatic::clr_darken("#ECC0CF", 0.1), bins = 100) +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL)
 ```
 
@@ -738,7 +739,7 @@ two_groups <- bind_rows(
 two_groups |>
   ggplot(aes(x, y, color = group)) +
   geom_point() +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL) +
   guides(color = "none") +
   scale_color_manual(values = c("#DFD0C0", "#D1BCDC")) +
@@ -752,7 +753,7 @@ two_groups |>
 two_groups |>
   ggplot(aes(x, y, color = group)) +
   geom_point() +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL) +
   guides(color = "none") +
   scale_color_manual(values = c("#DFD0C0", "#D1BCDC", "#B5C7EB")) +
@@ -772,7 +773,7 @@ grid <- expand_grid(y = seq(-5, 15, length.out = 200), x = seq(-35, 135, length.
 two_groups |>
   ggplot(aes(x, y, color = group)) +
   geom_point() +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL) +
   guides(color = "none", fill = "none") +
   scale_color_manual(values = c("#DFD0C0", "#D1BCDC", "#B5C7EB")) +
@@ -789,7 +790,7 @@ two_groups |>
 two_groups |>
   ggplot(aes(x, y, color = group)) +
   geom_point() +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   labs(x = NULL, y = NULL) +
   guides(color = "none") +
   scale_color_manual(values = c("#DFD0C0", "#D1BCDC", "#B5C7EB")) +
@@ -887,7 +888,7 @@ data_toy <- tibble::tibble(
 data_toy |>
   ggplot(aes(Predictor, Outcome)) +
   geom_point() +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   theme(axis.text = element_blank())
 ```
 
@@ -898,7 +899,7 @@ data_toy |>
   mutate(Color = abs(Predictor - Predictor[max(Outcome) == Outcome])) |>
   ggplot(aes(Predictor, Outcome, color = Color)) +
   geom_point() +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   theme(axis.text = element_blank()) +
   scale_color_gradient(
     high = "#E0E0E0", 
@@ -929,7 +930,7 @@ data_splines |>
     low = "#E0E0E0", 
     high = prismatic::clr_darken("#B5C7EB") |> prismatic::clr_saturate()
   ) +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   guides(color = "none") +
   theme(axis.text = element_blank())
 ```
@@ -943,7 +944,7 @@ data_splines |>
   ggplot(aes(Predictor, value)) +
   geom_line() +
   facet_wrap(~name) +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   theme(axis.text = element_blank())
 ```
 
@@ -965,7 +966,7 @@ data_splines |>
   ggplot(aes(Predictor, value)) +
   geom_line() +
   facet_wrap(~name) +
-  theme_minimal() +
+  theme_minimal(paper = "#FFFFFF00", base_size = 22) +
   theme(axis.text = element_blank())
 ```
 
