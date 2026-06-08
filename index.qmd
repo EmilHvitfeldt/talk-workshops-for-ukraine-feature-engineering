@@ -4,11 +4,16 @@ format:
     theme: [default, styles.scss]
     width: 1280
     height: 720
-    include-after-body: 
+    include-in-header:
+      text: |
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    include-after-body:
       - "all-the-js-code.html"
+      - "js/infra.html"
+      - "js/recipe-pipeline.html"
 echo: false
 code-line-numbers: false
-pagetitle: Feature Engineering, Workshops for Ukraine
+pagetitle: Feature Engineering, Pfizer x Posit Summit 2026
 knitr:
   opts_chunk:
     dev: png
@@ -17,7 +22,7 @@ knitr:
 
 ## Feature Engineering {.center .dark}
 
-### Workshops for Ukraine 
+### Pfizer x Posit Summit 2026
 
 Emil Hvitfeldt
 
@@ -223,6 +228,20 @@ recipe(sale_price ~ ., data = ames_training) |>
 :::
 
 [many steps have options to modify behavior]{.green}
+
+## {.rec-slide}
+
+::: {.rec-stage-wrap}
+<div id="rec-title" class="rec-title"></div>
+<div id="rec-stage"></div>
+:::
+
+[]{.fragment .rec-frag id="rec-impute"}
+[]{.fragment .rec-frag id="rec-unknown"}
+[]{.fragment .rec-frag id="rec-dummy"}
+[]{.fragment .rec-frag id="rec-normalize"}
+[]{.fragment .rec-frag id="rec-pca"}
+[]{.fragment .rec-frag id="rec-final"}
 
 ## Using a recipe {.dark}
 
