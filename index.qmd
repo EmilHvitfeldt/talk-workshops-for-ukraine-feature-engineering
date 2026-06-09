@@ -22,15 +22,13 @@ knitr:
 
 ## Feature Engineering {.center .dark}
 
-### Pfizer x Posit Summit 2026
+### Pfizer x Posit 
+
+### Summit 2026
 
 Emil Hvitfeldt
 
-![](assets/cat-theme/cat1.svg){.absolute width=500.139px height=500.68px left=856px top=-124px}
-
-![](assets/cat-theme/cat4.svg){.absolute width=377.125px height=455.946px left=647.41px top=-108.144px}
-
-![](assets/cat-theme/plant1.svg){.absolute width=502.79px height=285.45px left=665.753px top=61.0849px}
+![](assets/cat-theme/09-cat.svg){.absolute width=500.68px height=500.68px left=856px top=-124px}
 
 ## What is Feature Engineering?
 
@@ -91,9 +89,9 @@ or deal with scaling issues
 preprocessing vs feature engineering 
 :::
 
-![](assets/cat-theme/cat7.svg){.absolute width=384.941px height=458.723px left=702.059px top=-121.723px}
+![](assets/cat-theme/17-cat.svg){.absolute width=388.38px height=458.723px left=702.059px top=-121.723px}
 
-![](assets/cat-theme/cat8.svg){.absolute width=436.148px height=445.185px left=91.4391px top=-122.232px}
+![](assets/cat-theme/19-cat.svg){.absolute width=438.34px height=445.185px left=91.4391px top=-122.232px}
 
 ## 
 
@@ -629,9 +627,7 @@ adoptions |>
 
 # numeric variables {.dark}
 
-![](assets/cat-theme/cat3.svg){.absolute width=776.708px height=287.697px left=-103.568px top=116.572px}
-
-![](assets/cat-theme/plant3.svg){.absolute width=253.461px height=405.037px left=870.72px top=37.2435px}
+![](assets/cat-theme/06-cat.svg){.absolute width=374.49px height=287.697px left=-103.568px top=116.572px}
 
 ## {.dark}
 
@@ -1018,9 +1014,7 @@ Splines: `step_spline_b()`
 
 # Categorical Variables {.dark}
 
-![](assets/cat-theme/plant2.svg){.absolute width=495.528px height=287.546px left=-72.417px top=-4.6679px}
-
-![](assets/cat-theme/cat2.svg){.absolute width=422.185px height=394.978px left=790.24px top=-334.572px}
+![](assets/cat-theme/01-cat.svg){.absolute width=423.92px height=394.978px left=790.24px top=-334.572px}
 
 ## {.dark}
 
@@ -1429,7 +1423,7 @@ target encoding: `embed::step_lencode()`, `embed::step_lencode_glm/mixed/bayes()
 
 # Date time variables {.dark}
 
-![](assets/cat-theme/cat6.svg){.absolute width=842.708px height=544.089px left=175.48px top=88.4244px}
+![](assets/cat-theme/20-cat.svg){.absolute width=840.86px height=544.089px left=175.48px top=88.4244px}
 
 ## Date time variables
 
@@ -1776,4 +1770,4 @@ Finished books by other people:
 - Feature Engineering Bookcamp
 - Feature Engineering and Selection
 
-![](assets/cat-theme/cat7.svg){.absolute width=692.753px height=638.144px left=698.247px top=72px}
+![](assets/cat-theme/21-cat.svg){.absolute width=692.57px height=638.144px left=698.247px top=72px}
